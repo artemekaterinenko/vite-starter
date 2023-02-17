@@ -7,7 +7,7 @@
 - Use [ESLint](https://eslint.org) and [Prettier](https://prettier.io) on VSCode and before you commit with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged).
 - Write unit and integration tests with [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/).
 - Write e2e tests with [Cypress](https://www.cypress.io).
-- GitHub Actions for automatic [dependency updates](https://renovatebot.com/), running tests and code coverage with [Codecov](https://about.codecov.io/).
+- GitHub Actions for automatic [dependency updates](https://github.com/features/security/), running tests and code coverage with [Codecov](https://about.codecov.io/).
 - Deploy to [vercel.com](https://vercel.com/) with pre-configured [SPA fallback](https://vercel.com/docs/configuration#routes/advanced/spa-fallback).
 
 ## Getting started
