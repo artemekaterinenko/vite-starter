@@ -28,7 +28,7 @@ pnpm install
 
 - [ ] If you don't plan to use GitHub Actions, delete the `.github` directory.
 - [ ] Change the `favicon.png`, `apple-touch-icon.png`, `android-chrome-192x192.png` and `android-chrome-512x512.png`. [favicon.io](https://favicon.io) is a cool tool for generating these assets.
-- [ ] If you don't plan to use `react-query`, remove the query client logic in the `main.tsx` file.
+- [ ] If you don't plan to use `@tanstack/react-query` or `@tanstack/react-router`, remove the packages and the logic in the `index.tsx` file.
 - [ ] Change the title, description and theme color in the `index.html` and `vite.config.ts`.
 - [ ] Modify or delete the `LICENSE` file.
 - [ ] Change the `name` field in package.json.
