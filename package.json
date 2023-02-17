@@ -1,0 +1,99 @@
+{
+  "name": "vite-starter",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build",
+    "commit": "cz",
+    "dev": "vite --open",
+    "dev-mocks": "NODE_ENV=development-mocks vite --open",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "preview:test": "start-server-and-test preview http://localhost:4173",
+    "test": "vitest",
+    "test:ci": "vitest run",
+    "test:e2e": "pnpm preview:test 'cypress open'",
+    "test:e2e:headless": "pnpm preview:test 'cypress run'",
+    "test:e2e:ci": "vite build && pnpm preview:test 'cypress run --record'",
+    "format": "prettier -uw --cache --ignore-path .gitignore .",
+    "run-tsc": "tsc",
+    "run-eslint": "eslint --cache --fix --ignore-path .gitignore --ext .ts,.tsx .",
+    "lint": "run-p run-tsc run-eslint",
+    "validate": "run-p lint test:ci test:e2e:headless"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "4.24.6",
+    "@tanstack/react-query-devtools": "^4.24.6",
+    "@tanstack/react-router": "0.0.1-beta.82",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "1.5.0",
+    "@testing-library/cypress": "9.0.0",
+    "@testing-library/dom": "8.20.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@testing-library/user-event": "14.4.3",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/testing-library__jest-dom": "5.14.5",
+    "@typescript-eslint/eslint-plugin": "5.52.0",
+    "@typescript-eslint/parser": "5.52.0",
+    "@vitejs/plugin-react": "3.1.0",
+    "@vitest/coverage-istanbul": "0.28.5",
+    "autoprefixer": "^10.4.13",
+    "commitizen": "4.3.0",
+    "cypress": "12.5.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.34.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-testing-library": "5.10.2",
+    "husky": "8.0.3",
+    "jsdom": "21.1.0",
+    "lint-staged": "13.1.2",
+    "msw": "1.0.1",
+    "npm-run-all": "4.1.5",
+    "postcss": "^8.4.21",
+    "prettier": "2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
+    "start-server-and-test": "1.15.4",
+    "tailwindcss": "^3.2.6",
+    "typescript": "4.9.5",
+    "vite": "4.1.1",
+    "vite-tsconfig-paths": "4.0.5",
+    "vitest": "0.28.5",
+    "whatwg-fetch": "3.6.2"
+  },
+  "browserslist": {
+    "production": "Edge >= 18, Firefox >= 60, Chrome >= 61, Safari >= 11, Opera >= 48",
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ]
+  },
+  "lint-staged": {
+    "*": "prettier -uw --cache",
+    "*.{ts,tsx}": [
+      "eslint --cache --fix",
+      "vitest related --run --coverage=false"
+    ]
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "engines": {
+    "node": ">=18.14.0",
+    "pnpm": ">=7.27.0"
+  }
+}
